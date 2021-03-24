@@ -3,7 +3,7 @@ import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
 
 const ChatFeed = (props) => {
-    console.log(props)
+    // console.log(props)
 
     const { chats, activeChat, userName, messages } = props;
 
