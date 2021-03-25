@@ -2,6 +2,7 @@ import MessageForm from './MessageForm';
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
 import ChatHeader from "./ChatHeader";
+import Offline from "./Offline"
 
 const ChatFeed = (props) => {
     // console.log(props)
@@ -58,7 +59,7 @@ const ChatFeed = (props) => {
 
     renderMessages()
 
-    if (!chat) return 'Loading'
+    if (!chat) return <Offline />
 
     return (
         <div className="chat-feed">

@@ -1,14 +1,14 @@
 .main-container {
-    position: relative;
+    position: absolute;
+    bottom: 0px;
+    width: 90%;
+    padding: 25px;
+    background-color: rgb(240, 240, 240);
 }
 
 .addChat-container {
-    padding-top: 485px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
 }
 
 .addChat-button {

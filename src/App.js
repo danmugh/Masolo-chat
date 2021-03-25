@@ -4,6 +4,8 @@ import ChatFeed from './components/ChatFeed';
 import LoginForm from './components/LoginForm';
 import NewChatForm from "./components/NewChatForm";
 
+// import { NewChatForm } from 'react-chat-engine';
+
 import './App.css';
 import sound from './assets/Chai-There-Is-God-O-Sound-Effect-via-instrumentals.com_.ng_.mp3'
 
@@ -23,6 +25,8 @@ const App = () => {
             // onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
             onNewMessage={() => new Audio(sound).play()}
             renderNewChatForm={(creds) => <NewChatForm {...creds} />}
+            // renderNewChatForm={(props) => <NewChatForm {...props} />}
+
         />
     );
 };

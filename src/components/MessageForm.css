@@ -1,19 +1,6 @@
-
-
 .message-form {
-    background-color: rgb(224, 5, 5);
-
     overflow: hidden;
     border-radius: 30px;
-    /*border: 2px solid #3b2a50;*/
-
-    /*background-color: white;*/
-
-
-}
-
-.success:focus {
-    border:2px solid red;
 }
 
 .message-input {
