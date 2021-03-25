@@ -1,6 +1,7 @@
 import MessageForm from './MessageForm';
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
+import ChatHeader from "./ChatHeader";
 
 const ChatFeed = (props) => {
     // console.log(props)
@@ -39,7 +40,7 @@ const ChatFeed = (props) => {
             const isMyMessage = userName === message.sender.username;
 
             return (
-                <div key={`msg_${index}`} style={{ width: '100%' }}>
+                <div key={`msg_${index}`} style={{ width: '100%' }} className="message-bubble" >
                     <div className="message-block">
                         {
                             isMyMessage
@@ -61,11 +62,8 @@ const ChatFeed = (props) => {
 
     return (
         <div className="chat-feed">
-            <div className="chat-title-container">
-                <div className="chat-title">{chat?.title}</div>
-                <div className="chat-subtitle">
-                    {chat.people.map((person) => `${person.person.username}`)}
-                </div>
+            <div>
+                <ChatHeader chat={chat} />
             </div>
             {renderMessages()}
             <div style={{ height: '100px' }} />

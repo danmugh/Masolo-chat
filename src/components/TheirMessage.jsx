@@ -22,7 +22,7 @@ const TheirMessage = (props) => {
                     />
                 )
                 : (
-                    <div className="message" style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>
+                    <div className="their-message" style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px' }}>
                         {message.text}
                     </div>
                 )}

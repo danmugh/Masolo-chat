@@ -1,0 +1,60 @@
+
+
+.message-form {
+    background-color: rgb(224, 5, 5);
+
+    overflow: hidden;
+    border-radius: 30px;
+    /*border: 2px solid #3b2a50;*/
+
+    /*background-color: white;*/
+
+
+}
+
+.success:focus {
+    border:2px solid red;
+}
+
+.message-input {
+    height: 40px;
+    width: calc(100% - 132px);
+    background-color: white;
+    border: 1px solid white;
+    padding: 0px 18px;
+    outline: none;
+    font-size: 15px;
+}
+
+.image-button {
+    cursor: pointer;
+    padding: 0px 5px;
+    height: 100%;
+
+}
+
+.picture-icon {
+    top: 2px;
+    position: relative;
+    font-size: 22px;
+    color: #842fe5;
+
+}
+
+.send-button {
+
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0px 5px;
+    height: 100%;
+}
+
+.send-icon {
+    top: 1px;
+    position: relative;
+
+    color: #842fe5;
+    font-size: 22px;
+}
+

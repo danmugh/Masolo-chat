@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { SendOutlined, PictureOutlined } from '@ant-design/icons';
+import './MessageForm.css'
 import { sendMessage, isTyping } from 'react-chat-engine';
-// import { Input, Space } from 'antd';
-// import { PictureFilled,  } from '@ant-design/icons';
+import { Input, Space } from 'antd';
+import { PictureFilled, SendOutlined } from '@ant-design/icons';
 
 // const { Search } = Input;
 
@@ -32,51 +32,32 @@ const MessageForm = (props) => {
         sendMessage(creds, chatId, { files: event.target.files, text: '' });
     };
 
-    // const suffix = (
-    //     <div>
-    //         <label htmlFor="upload-button">
-    //     <span
-    //         className="image-button"
-    //     >
-    //       <PictureFilled
-    //           className="picture-icon"
-    //           style={{
-    //               fontSize: 16,
-    //               color: '#1890ff',
-    //           }}
-    //       />
-    //     </span>
-    //         </label>
-    //         <input
-    //             type="file"
-    //             multiple={false}
-    //             id="upload-button"
-    //             style={{ display: 'none' }}
-    //             onChange={handleUpload.bind(this)}
-    //         />
-    //         <button
-    //             type="submit"
-    //             // className="send-button"
-    //         >
-    //             <SendOutlined className="send-icon" />
-    //         </button>
-    //     </div>
-    //
-    // );
+    const suffix = (
+        <div>
+            <button
+                type="submit"
+                className="send-button"
+            >
+                <SendOutlined
+                    className="send-icon"
+                    style={{ color: '#842fe5'}}
+                />
+            </button>
+        </div>
 
-    return (
-        <form className="message-form" onSubmit={handleSubmit}>
-            <input
-                className="message-input"
-                placeholder="Send a message..."
-                value={value}
-                onChange={handleChange}
-                onSubmit={handleSubmit}
-            />
+    );
+
+    const prefix = (
+        <div>
             <label htmlFor="upload-button">
-            <span className="image-button">
-              <PictureOutlined className="picture-icon" />
-            </span>
+                <span
+                    className="image-button"
+                >
+                  <PictureFilled
+                      className="picture-icon"
+                      style={{ color: '#842fe5' }}
+                  />
+                </span>
             </label>
             <input
                 type="file"
@@ -85,26 +66,28 @@ const MessageForm = (props) => {
                 style={{ display: 'none' }}
                 onChange={handleUpload.bind(this)}
             />
-            <button type="submit" className="send-button">
-                <SendOutlined className="send-icon" />
-            </button>
+        </div>
+    )
 
-            {/*<Input*/}
-            {/*    // className="message-input"*/}
 
-            {/*    placeholder="Type your message text"*/}
-            {/*    enterButton={handleSubmit}*/}
-            {/*    size="large"*/}
-            {/*    suffix={suffix}*/}
-            {/*    value={value}*/}
-            {/*    allowClear*/}
-            {/*    onChange={handleChange}*/}
-            {/*    onSubmit={handleSubmit}*/}
-            {/*    onSearch={handleSubmit}*/}
-            {/*/>*/}
+    return (
+        <form className="message-form" onSubmit={handleSubmit}>
+
+            <Input
+                style={{ borderRadius: '25px' }}
+                placeholder="Type your message text"
+                enterButton={handleSubmit}
+                size="large"
+                suffix={suffix}
+                prefix={prefix}
+                value={value}
+                allowClear
+                onChange={handleChange}
+                onSubmit={handleSubmit}
+                onSearch={handleSubmit}
+            />
 
         </form>
-
 
     );
 };
