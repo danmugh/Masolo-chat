@@ -1,6 +1,10 @@
 /* CHAT STYLES */
 @import '~antd/dist/antd.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
 * {
     font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
@@ -14,32 +18,42 @@
 
 .ce-chats-container {
     background-color: rgb(240, 240, 240) !important;
+
 }
 
 .ce-active-chat-card {
     background-color: #cabcdc !important;
     border: 4px solid #cabcdc !important;
     border-radius: 0px !important;
+
+}
+
+.ce-chat-title-text {
+    font-weight: bold;
+    font-family: 'Cormorant Garamond', cursive;
+    font-size: 20px;
+    color: #000000 !important;
 }
 
 .ce-chat-subtitle-text {
+    font-family: 'Italiana', serif;
     color: #595959 !important;
 }
 
 .ce-chat-form-container {
-
     padding-bottom: 20px !important;
 }
 
 .ce-text-input {
-    border-bottom-right-radius: 3px !important;
-    border-top-right-radius: 3px !important;
+    border-radius: 6px !important;
     border: 1px solid #3b2a50 !important;
+    display: none !important;
 }
 
 .ce-primary-button {
-    border-bottom-left-radius: 3px !important;
-    border-top-left-radius: 3px !important;
+    /*border-bottom-left-radius: 3px !important;*/
+    /*border-top-left-radius: 3px !important;*/
+    border-radius: 6px !important;
     background-color: #7554a0 !important;
     position: relative;
     bottom: 1px;
@@ -52,10 +66,11 @@
 
 .ce-settings {
     background-color: rgb(240, 240, 240) !important;
+
 }
 
 .ce-autocomplete-input {
-    border-radius: 6px !important;
+    border-radius: 20px !important;
     border: 1px solid #3b2a50 !important;
 }
 
@@ -63,6 +78,7 @@
     border-radius: 6px !important;
     border: 1px solid #3b2a50 !important;
     background-color: white !important;
+    font-family: 'Italiana', serif;
 }
 
 .ce-chat-settings-container {
@@ -71,7 +87,9 @@
 }
 
 .ce-chat-avatars-row {
-    display: none !important;
+    /*display: none !important;*/
+    display: block;
+    margin-bottom: 75px;
 }
 
 /* CUSTOM FEED */
@@ -117,8 +135,7 @@
 }
 
 .message-bubble {
-
-
+    /*padding-top: 20px;*/
 }
 
 .message-block {
@@ -192,55 +209,6 @@
 
     /*background-color: rgb(226, 13, 13);*/
 }
-
-/*.message-form {*/
-/*    background-color: rgb(224, 5, 5);*/
-
-/*    overflow: hidden;*/
-/*    border-radius: 30px;*/
-/*    border: 1px solid #3b2a50;*/
-/*    !*background-color: white;*!*/
-/*}*/
-
-/*.success:focus {*/
-/*    border:2px solid red;*/
-/*}*/
-
-/*.message-input {*/
-/*    height: 40px;*/
-/*    width: calc(100% - 132px);*/
-/*    background-color: white;*/
-/*    border: 1px solid white;*/
-/*    padding: 0px 18px;*/
-/*    outline: none;*/
-/*    font-size: 15px;*/
-/*}*/
-
-/*.image-button {*/
-/*    cursor: pointer;*/
-/*    padding: 0px 12px;*/
-/*    height: 100%;*/
-/*}*/
-
-/*.send-button {*/
-/*    height: 42px;*/
-/*    background-color: white;*/
-/*    border: 1px solid white;*/
-/*    padding: 0px 18px;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.send-icon {*/
-/*    top: 1px;*/
-/*    position: relative;*/
-/*    transform: rotate(-90deg);*/
-/*}*/
-
-/*.picture-icon {*/
-/*    top: 1px;*/
-/*    position: relative;*/
-/*    font-size: 14px;*/
-/*}*/
 
 /* FORM STYLES */
 *,

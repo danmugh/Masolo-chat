@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Input } from 'antd';
-import { PlusCircleTwoTone } from '@ant-design/icons';
+import { UsergroupAddOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import './NewChatForm.css';
-import {newChat as newChat$1, newChat} from "react-chat-engine";
+import { newChat} from "react-chat-engine";
 import Offline from "./Offline";
 
 
@@ -38,12 +38,20 @@ const NewChatForm = (props) => {
                 className="addChat-button"
 
         >
-            <PlusCircleTwoTone
+            <PlusCircleOutlined
                 className="addChat-icon"
                 // onClick={() => {(alert("You add a new chat"))}}
                 onClick={handleAdd}
                 style={{ color: '#842fe5'}}
             />
+
+            {/*<UsergroupAddOutlined*/}
+            {/*    className="addChat-icon"*/}
+            {/*    // onClick={() => {(alert("You add a new chat"))}}*/}
+            {/*    onClick={handleAdd}*/}
+            {/*    style={{ color: '#842fe5'}}*/}
+            {/*/>*/}
+
         </button>
     );
 
@@ -62,21 +70,6 @@ const NewChatForm = (props) => {
             </div>
         </div>
 
-
-
-        // <div className="main-container">
-        //     <div className="addChat-container">
-        //         <div>
-        //             <Input
-        //                 style={{ borderRadius: '25px' }}
-        //                 allowClear
-        //                 suffix={suffix}
-        //                 value={value}
-        //                 onChange={handleChange}
-        //                 placeholder="Add new chat" />
-        //         </div>
-        //     </div>
-        // </div>
     );
 };
 
