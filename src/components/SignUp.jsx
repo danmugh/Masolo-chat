@@ -1,29 +1,33 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const projectID = 'e6955a0a-4c5d-46fa-abd8-7ebb20a31ef2';
+const privateKey = 'dcb9cb5a-753d-48b0-936d-6b8a657987a2';
 
-const Modal = () => {
+const SignUp = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
+        // console.log("username", username)
+        // console.log("secret", password)
+
         e.preventDefault();
 
         const authObject = {
-            'Project-ID': projectID,
-            'User-Name': username,
-            'User-Secret': password
+            "PRIVATE-KEY": privateKey,
+            "username": username,
+            "secret": password
         };
 
         try {
-            await axios.get('https://api.chatengine.io/chats', { headers: authObject });
+            await axios.post('https://api.chatengine.io/users/', { header: 'PRIVATE-KEY: {dcb9cb5a-753d-48b0-936d-6b8a657987a2}', data: {
+                    "username": `${username}`,
+                    "secret": `${password}`
+                } });
 
-            localStorage.setItem('username', username);
-            localStorage.setItem('password', password);
+            // window.location.reload();
 
-            window.location.reload();
             setError('');
         } catch (err) {
             setError('Oops, incorrect credentials.');
@@ -39,7 +43,7 @@ const Modal = () => {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
                     <div align="center">
                         <button type="submit" className="button">
-                            <span>Start chatting</span>
+                            <span>Create an account</span>
                         </button>
                     </div>
                 </form>
@@ -50,4 +54,4 @@ const Modal = () => {
     );
 };
 
-export default Modal;
+export default SignUp;

@@ -3,6 +3,7 @@ import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
 import ChatHeader from "./ChatHeader";
 import Offline from "./Offline"
+import Spinner from "./Spinner";
 
 const ChatFeed = (props) => {
     // console.log(props)
@@ -59,7 +60,16 @@ const ChatFeed = (props) => {
 
     renderMessages()
 
-    if (!chat) return <Offline />
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    if (!chat) return (
+        // <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
+        <div style={{position: 'relative'}} >
+            <Spinner />
+        </div>
+    )
 
     return (
         <div className="chat-feed">

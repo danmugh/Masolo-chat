@@ -1,14 +1,12 @@
-import { PlusCircleTwoTone } from '@ant-design/icons'
+import { PlusCircleTwoTone } from '@ant-design/icons';
+import Spinner from "./Spinner";
 
 const Offline = () => {
 
 
     return (
-        <div>
-            <p>Hello</p>
-            <PlusCircleTwoTone
-                className="addChat-icon"
-            />
+        <div >
+            <Spinner />
         </div>
     );
 };

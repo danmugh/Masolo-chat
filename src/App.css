@@ -161,6 +161,11 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     max-width: 60%;
+
+    float: right;
+    margin-right: 18px;
+    color: white;
+    background-color: #3B2A50
 }
 
 .their-message {
@@ -170,10 +175,41 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     max-width: 60%;
+
+    margin-left: 48px;
+    float: left;
+    background-color: #CABCDC
+}
+
+.theirFirst-message {
+    padding: 12px;
+    font-size: 16px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    max-width: 60%;
+
+    margin-left: 4px;
+    float: left;
+    background-color: #CABCDC
 }
 
 .message-image {
     margin-right: 18px;
+    margin-left: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+    height: 30vw;
+    /* width: 30vw; */
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.firstMessage-image {
+    margin-right: 18px;
+    margin-left: 4px;
     object-fit: cover;
     border-radius: 6px;
     height: 30vw;
@@ -293,4 +329,57 @@
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .my-message {
+        padding: 12px;
+        font-size: 16px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        max-width: 60%;
+
+        float: right;
+        margin-right: 10px;
+        color: white;
+        background-color: #3B2A50
+    }
+
+    .their-message {
+        padding: 12px;
+        font-size: 16px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        max-width: 60%;
+    }
+
+    .message-row {
+        float: left;
+        width: 100%;
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .message-image {
+        margin-right: 10px;
+        object-fit: cover;
+        border-radius: 6px;
+        height: 30vw;
+        /* width: 30vw; */
+        max-height: 200px;
+        max-width: 200px;
+        min-height: 100px;
+        min-width: 100px;
+    }
+
+    .message-form-container {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        padding: 15px;
+        background-color: rgb(240, 240, 240);
+    }
+
 }

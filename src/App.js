@@ -5,7 +5,7 @@ import LoginForm from './components/LoginForm';
 import NewChatForm from "./components/NewChatForm";
 
 import './App.css';
-import sound from './assets/Chai-There-Is-God-O-Sound-Effect-via-instrumentals.com_.ng_.mp3'
+import sound from './assets/Jesus-is-Lord-Sound-effect-via-instrumentals.com_.ng_.mp3'
 
 const projectID = 'e6955a0a-4c5d-46fa-abd8-7ebb20a31ef2';
 
@@ -16,11 +16,12 @@ const App = () => {
     return (
         <ChatEngine
             height="100vh"
+            // publicKey={projectID}
             projectID={projectID}
             userName={localStorage.getItem('username')}
             userSecret={localStorage.getItem('password')}
+
             renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-            // onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
             onNewMessage={() => new Audio(sound).play()}
             renderNewChatForm={(creds) => <NewChatForm {...creds} />}
 
@@ -29,3 +30,21 @@ const App = () => {
 };
 
 export default App;
+
+// import React from 'react';
+// import { ChatEngine } from 'react-chat-engine';
+//
+// export function App() {
+//     return (
+//         <ChatEngine
+//             height='100vh'
+//             userName='Mtk_67'
+//             userSecret='123456'
+//             projectID='264f5964-91f1-47e3-912b-bc4d777d1723'
+//         />
+//     );
+// }
+
+// "proxy": "https://api.chatengine.io:3000",
+//
+// export default App;

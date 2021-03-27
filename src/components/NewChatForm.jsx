@@ -38,19 +38,19 @@ const NewChatForm = (props) => {
                 className="addChat-button"
 
         >
-            <PlusCircleOutlined
-                className="addChat-icon"
-                // onClick={() => {(alert("You add a new chat"))}}
-                onClick={handleAdd}
-                style={{ color: '#842fe5'}}
-            />
-
-            {/*<UsergroupAddOutlined*/}
+            {/*<PlusCircleOutlined*/}
             {/*    className="addChat-icon"*/}
             {/*    // onClick={() => {(alert("You add a new chat"))}}*/}
             {/*    onClick={handleAdd}*/}
             {/*    style={{ color: '#842fe5'}}*/}
             {/*/>*/}
+
+            <UsergroupAddOutlined
+                className="addChat-icon"
+                // onClick={() => {(alert("You add a new chat"))}}
+                onClick={handleAdd}
+                style={{ color: '#842fe5'}}
+            />
 
         </button>
     );

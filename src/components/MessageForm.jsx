@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './MessageForm.css'
-import { sendMessage, isTyping } from 'react-chat-engine';
-import { Input, Space } from 'antd';
+import { sendMessage, isTyping, getMessages } from 'react-chat-engine';
+import { Input } from 'antd';
 import { PictureFilled, SendOutlined } from '@ant-design/icons';
 
 // const { Search } = Input;
