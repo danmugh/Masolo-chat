@@ -2,16 +2,38 @@ import './ChatHeader.css';
 import { MenuUnfoldOutlined, SettingOutlined, CloseOutlined } from '@ant-design/icons';
 import {newChat} from "react-chat-engine";
 import {useState} from "react";
+import { ChatSettings, ChatList } from 'react-chat-engine';
+import ChatFeed from "./ChatFeed";
 
 
-const ChatHeader = ({ chat }) => {
+const ChatHeader = (props) => {
+
+    const { chat } = props
 
     const [menu, setMenu] = useState(false);
     const [setting, setSetting] = useState(false);
+    const [backdrop, setBackdrop] = useState(false);
 
-    const handleMenu = () => setMenu(!menu);
+    const handleMenu = () => {
+        setMenu(!menu)
+        setBackdrop(!backdrop)
+    };
 
-    const handleSetting = () => setSetting(!setting);
+    const handleSetting = () => {
+        setSetting(!setting)
+        setBackdrop(!backdrop)
+    };
+
+    const handleCloseBackdrop = () => {
+        {
+            menu && handleMenu();
+        }
+        {
+            setting && handleSetting();
+        }
+    };
+
+
 
     // console.log('menu', menu)
     //
@@ -47,68 +69,59 @@ const ChatHeader = ({ chat }) => {
             </div>
             <div>
                 <nav className={menu ? 'nav-menu active' : 'nav-menu'}>
-                    <ul className='nav-menu-items' onClick={handleMenu} >
+                    <ul className='nav-menu-items'  >
                         <li className='navbar-toggle'>
                             <a href="#">
-                                <CloseOutlined className='close-icon' style={{ color: '#842fe5'}} />
+                                <CloseOutlined onClick={handleMenu}
+                                               className='close-icon' style={{ color: '#842fe5'}} />
                             </a>
                         </li>
-                        <li key="01" className="nav-text">
-                            <a href="#">
-                                <SettingOutlined
-                                    style={{ color: '#842fe5'}} />
-                                <span>Lorem</span>
-                            </a>
-                        </li>
-                        <li key="02" className="nav-text">
-                            <a href="#">
-                                <SettingOutlined
-                                    style={{ color: '#842fe5'}} />
-                                <span>Ipsum</span>
-                            </a>
-                        </li>
-                        <li key="03" className="nav-text">
-                            <a href="#">
-                                <SettingOutlined
-                                    style={{ color: '#842fe5'}} />
-                                <span>Dolor</span>
-                            </a>
-                        </li>
+
+                        <ChatList {...props} />
+
                     </ul>
                 </nav>
             </div>
             <div>
                 <nav className={setting ? 'nav-setting active' : 'nav-setting'}>
-                    <ul className='nav-setting-items' onClick={handleSetting} >
+                    <ul className='nav-setting-items'  >
                         <li className='navbar-toggle'>
                             <a href="#">
-                                <CloseOutlined className='close-setting-icon' style={{ color: '#842fe5'}} />
+                                <CloseOutlined onClick={handleSetting}
+                                               className='close-setting-icon' style={{ color: '#842fe5'}} />
                             </a>
                         </li>
-                        <li key="01" className="nav-text">
-                            <a href="#">
-                                <SettingOutlined
-                                    style={{ color: '#842fe5'}} />
-                                <span>Lorem</span>
-                            </a>
-                        </li>
-                        <li key="02" className="nav-text">
-                            <a href="#">
-                                <SettingOutlined
-                                    style={{ color: '#842fe5'}} />
-                                <span>Ipsum</span>
-                            </a>
-                        </li>
-                        <li key="03" className="nav-text">
-                            <a href="#">
-                                <SettingOutlined
-                                    style={{ color: '#842fe5'}} />
-                                <span>Dolor</span>
-                            </a>
-                        </li>
+
+                        <ChatSettings {...props} />
+
+                        {/*<li key="01" className="nav-text">*/}
+                        {/*    <a href="#">*/}
+                        {/*        <SettingOutlined*/}
+                        {/*            style={{ color: '#842fe5'}} />*/}
+                        {/*        <span>Lorem</span>*/}
+                        {/*    </a>*/}
+                        {/*</li>*/}
+                        {/*<li key="02" className="nav-text">*/}
+                        {/*    <a href="#">*/}
+                        {/*        <SettingOutlined*/}
+                        {/*            style={{ color: '#842fe5'}} />*/}
+                        {/*        <span>Ipsum</span>*/}
+                        {/*    </a>*/}
+                        {/*</li>*/}
+                        {/*<li key="03" className="nav-text">*/}
+                        {/*    <a href="#">*/}
+                        {/*        <SettingOutlined*/}
+                        {/*            style={{ color: '#842fe5'}} />*/}
+                        {/*        <span>Dolor</span>*/}
+                        {/*    </a>*/}
+                        {/*</li>*/}
                     </ul>
                 </nav>
             </div>
+            <div
+                onClick={handleCloseBackdrop}
+                className={ backdrop ? "backdrop" : "" }
+            />
         </>
     );
 };

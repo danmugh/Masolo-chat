@@ -74,7 +74,7 @@ const ChatFeed = (props) => {
     return (
         <div className="chat-feed">
             <div>
-                <ChatHeader chat={chat} />
+                <ChatHeader chat={chat} {...props} />
             </div>
             {renderMessages()}
             <div style={{ height: '100px' }} />
