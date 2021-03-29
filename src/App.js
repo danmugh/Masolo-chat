@@ -1,17 +1,18 @@
 import { ChatEngine } from 'react-chat-engine';
 
 import ChatFeed from './components/ChatFeed';
-import LoginForm from './components/LoginForm';
+import LoginForm from './components/Signin';
 import NewChatForm from "./components/NewChatForm";
 
 import './App.css';
 import sound from './assets/Jesus-is-Lord-Sound-effect-via-instrumentals.com_.ng_.mp3'
+import AuthPages from "./components/AuthPages";
 
 const projectID = 'e6955a0a-4c5d-46fa-abd8-7ebb20a31ef2';
 
 const App = () => {
 
-    if (!localStorage.getItem('username')) return <LoginForm />;
+    if (!localStorage.getItem('username')) return <AuthPages />;
 
     return (
         <ChatEngine
